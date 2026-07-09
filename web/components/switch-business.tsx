@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect } from "react"
 import {
   Combobox,
   ComboboxContent,
@@ -8,11 +9,24 @@ import {
   ComboboxItem,
   ComboboxList,
 } from "@/components/ui/combobox"
-import { businessData } from "@/data/business"
+import { useUser } from "@/context/userContext";
+import { useBusinessStore } from "@/stores/businessStore";
 
 export function SwitchBusiness() {
+  const switchBusiness = useBusinessStore((state) => state.switchBusiness);
+
+  const user = useUser();
+  const businesses = user?.user?.business ?? [];
+
+  useEffect(() => {
+    if (businesses.length > 0 && businesses[0]) {
+      switchBusiness(businesses[0] as any);
+    }
+  }, [businesses, switchBusiness]);
+
+
   return (
-    <Combobox items={businessData} defaultValue={businessData[0]}>
+    <Combobox items={businesses} defaultValue={businesses[0]}>
       <ComboboxInput className="min-w-28 text-center" placeholder="Select a business" />
       <ComboboxContent>
         <ComboboxEmpty>No items found.</ComboboxEmpty>
