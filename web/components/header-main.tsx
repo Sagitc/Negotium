@@ -1,5 +1,5 @@
 import { Orbit } from "lucide-react";
-import { NavHeader } from "@/components/nav-header";
+import { NavMain } from "@/components/nav-main";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuPortal, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuSub, DropdownMenuSubContent, DropdownMenuSubTrigger, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
 import { ThemeToggler } from "@/components/theme-toggler";
@@ -13,7 +13,7 @@ export function HeaderMain() {
                     <Orbit className="size-5" />
                     <span className="text-base font-medium ml-3">Negotium</span>
                 </div>
-                <NavHeader />
+                <NavMain className="hidden md:flex"/>
                 <div className="flex items-center gap-4">
                     <SwitchBusiness />
 
