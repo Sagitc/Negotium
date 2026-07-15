@@ -1,3 +1,6 @@
 export type Business = {
-    store: string;
+    id: number;
+    label: string;
+    goal: number;
+    purchaseLimit: number;
 }

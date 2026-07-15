@@ -1,6 +1,14 @@
-import { businessData } from "@/data/businessData";
 import { User } from "@/types/user";
-import { randomUUID } from "node:crypto";
+
+import {
+    store1,
+    store2,
+    store3,
+    store4,
+    store5,
+    store6,
+    store7
+} from "@/data/businessData";
 
 export const User1: User = {
     id: 1,
@@ -8,7 +16,7 @@ export const User1: User = {
     email: "sagitc@gmail.com",
     password: "123456",
     role: "admin",
-    business: businessData.filter((item) => typeof item === "string"),
+    business: [store1, store2, store3, store4, store5, store6, store7],
 };
 
 export const User2: User = {
@@ -17,5 +25,5 @@ export const User2: User = {
     email: "robert@gmail.com",
     password: "123456",
     role: "buyer",
-    business: ["Couto 1"],
+    business: [store1, store2],
 };

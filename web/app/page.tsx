@@ -1,6 +1,6 @@
+import CardSection from "@/components/Card";
 import { HeaderMain } from "@/components/header-main";
 import { NavMain } from "@/components/nav-main";
-import SectionSingleCards from "@/components/section-single-cards";
 
 export default function Page() {
 
@@ -10,7 +10,7 @@ export default function Page() {
         
         <NavMain className="fixed bottom-6 left-1/2 -translate-x-1/2 md:hidden" />
         <HeaderMain />
-        <SectionSingleCards />
+        <CardSection />
 
       </div>
     </div>
